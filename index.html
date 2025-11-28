@@ -20,10 +20,10 @@
         <div class="body-title">
             <h1>Diseña tu propia computadora!</h1>
             <div class="form-container">
-                <form action="">
+                <form action="" id="formulario">
                     <h2>Seleccione su gabinete</h2>
                     <h4> Incluye tarjeta madre y fuente de poder</h4>
-                    <select name="gabinete" id="gabinete">
+                    <select name="gabinete" id="gabinete" onchange="calcular()">
                         <option value="0">------</option>
                         <option value="700"> Minitorre $700</option>
                         <option value="1200"> Torre $1200</option>
@@ -32,7 +32,7 @@
                     </select>
 
                     <h2>Seleccione su procesador</h2>
-                    <select name="procesador" id="procesador">
+                    <select name="procesador" id="procesador" onchange="calcular()">
                         <option value="0">------</option>
                         <option value="900"> Celeron $900</option>
                         <option value="1500"> Intel i3 $1500</option>
@@ -43,10 +43,10 @@
 
                     <h2>Seleccione su almacenamiento</h2>
                     <label for="HDD">HDD</label>
-                    <input type="radio" name="almacenamiento">
+                    <input type="radio" name="almacenamiento" value="0" onclick="calcular()">
                     <label for="SSD">SSD (+$695)</label>
-                    <input type="radio" name="almacenamiento"> <br>
-                    <select name="GB" id="GB">
+                    <input type="radio" name="almacenamiento" value="695" onclick="calcular()"> <br>
+                    <select name="GB" id="GB" onchange="calcular()">
                         <option value="0">------</option>
                         <option value="500"> 180GB $500</option>
                         <option value="650"> 250GB $650</option>
@@ -56,7 +56,7 @@
                     </select>
                     
                     <h2>Seleccione su memoria RAM</h2>
-                    <select name="RAM" id="RAM">
+                    <select name="RAM" id="RAM" onchange="calcular()">
                         <option value="0">------</option>
                         <option value="600"> 8GB $600</option>
                         <option value="1050"> 16GB $1050</option>
@@ -64,62 +64,49 @@
                     </select>
 
                     <h2>Seleccione el tamaño de su monitor</h2>
-                    <select name="monitor" id="monitor">
+                    <select name="monitor" id="monitor" onchange="calcular()">
                         <option value="0">------</option>
-                        <option value="1200"> 17"</option>
-                        <option value="1400"> 19"</option>
-                        <option value="1700"> 24"</option>
-                        <option value="2000"> 28"</option>
-                        <option value="2400"> 32"</option>
-                        <option value="2600"> 34"</option>
+                        <option value="1200"> 17" $1200</option>
+                        <option value="1400"> 19" $1400</option>
+                        <option value="1700"> 24" $1700</option>
+                        <option value="2000"> 28" $2000</option>
+                        <option value="2400"> 32" $2400</option>
+                        <option value="2600"> 34" $2600</option>
                     </select>
 
                     <h2>Accesorios extras</h2>
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
-                    <label for=""></label>
-                    <input type="checkbox">
+                    <label for="extra"> seleccione opciones extra</label> <br>
+                    <input type="checkbox" value="500" onclick="calcular()"> Teclado $500
+                    <input type="checkbox" value="300" onclick="calcular()"> Mouse $300
+                    <input type="checkbox" value="400" onclick="calcular()"> Webcam $400
+                    <input type="checkbox" value="800" onclick="calcular()"> Webcam profesional $800 <br>
+                    <input type="checkbox" value="330" onclick="calcular()"> Cable Ethernet 5m $330
+                    <input type="checkbox" value="650" onclick="calcular()"> Cable Ethernet 10m $650
+                    <input type="checkbox" value="190" onclick="calcular()"> USB Hub $190
+                    <input type="checkbox" value="400" onclick="calcular()"> Microfono basico $400 <br>
+                    <input type="checkbox" value="395" onclick="calcular()"> Ventilador $395
+                    <input type="checkbox" value="2090"onclick="calcular()"> Refrigeracion liquida $2090
+                    <input type="checkbox" value="560" onclick="calcular()"> Lector de discos $560
+                    <input type="checkbox" value="600" onclick="calcular()"> Lector SD $600 <br>
+                    <input type="checkbox" value="395" onclick="calcular()"> Herramientas basicas $395
+                    <input type="checkbox" value="550" onclick="calcular()"> Herramientas de limpieza $550
+                    <input type="checkbox" value="900" onclick="calcular()"> Paquete completo de herramientas $900
+                    <input type="checkbox" value="750" onclick="calcular()"> Base regrigerante $750 <br>
+                    <input type="checkbox" value="395" onclick="calcular()"> LEDs $395
+                    <input type="checkbox" value="2099"onclick="calcular()"> MS Office 2 años $2099
+                    <input type="checkbox" value="4950"onclick="calcular()"> MS Office 5 años $4950
+                    <input type="checkbox" value="8000"onclick="calcular()"> MS Office permanente $8000
                 </form>
             </div>
         </div>
     </div>
-
+    <div class="floating-box" id="floating-box" title="total">
+        <p>Precio total:</p>
+        <p id="precio"></p>
+    </div>
+    <footer>
+        Juan Gutierrez - Proyecto formulario - ©2025
+    </footer>
     <script src="JavaScript.js"></script>
 </body>
 </html>

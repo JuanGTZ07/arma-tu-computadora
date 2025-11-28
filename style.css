@@ -52,3 +52,26 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 15px rgb(79, 20, 119);
 }
+
+.floating-box {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: rgb(74, 87, 100);
+    color: #ffffff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    transition: transform 0.18s;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.floating-box:hover {
+    transform: translateY(-4px);
+}
+
+footer {
+    background-color: antiquewhite;
+    text-align: center;
+}
